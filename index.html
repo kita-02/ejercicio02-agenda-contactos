@@ -11,8 +11,22 @@
       <h1>Agenda de Contactos</h1>
       <p class="subtitulo">Ejercicio 02 - Desarrollo con Git y GitHub mediante funcionalidades</p>
 
-      <!-- Aqui se construira el formulario de registro -->
-      <section class="formulario" id="formulario"></section>
+      <!-- Formulario de registro (feature-agregar-contacto) -->
+      <section class="formulario" id="formulario">
+        <h2>Registrar contacto</h2>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Nombre del contacto" />
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" placeholder="987654321" />
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" placeholder="correo@ejemplo.com" />
+
+        <button type="button" onclick="guardarContacto()">Agregar contacto</button>
+        <p id="mensaje"></p>
+      </section>
 
       <!-- Aqui se mostrara la lista de contactos -->
       <section class="lista">
