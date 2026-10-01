@@ -28,9 +28,14 @@
         <p id="mensaje"></p>
       </section>
 
-      <!-- Aqui se mostrara la lista de contactos -->
+      <!-- Lista de contactos (feature-listar-contactos) -->
       <section class="lista">
-        <h2>Mis contactos</h2>
+        <h2>Mis contactos <span class="contador" id="total">0</span></h2>
+
+        <div class="buscador">
+          <input type="text" id="buscar" placeholder="Buscar contacto por nombre" />
+        </div>
+
         <ul id="listaContactos"></ul>
         <p id="vacio" class="vacio">No hay contactos registrados.</p>
       </section>

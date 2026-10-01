@@ -112,6 +112,27 @@ button.eliminar:hover {
   margin-top: 32px;
 }
 
+.contador {
+  display: inline-block;
+  min-width: 24px;
+  padding: 1px 8px;
+  margin-left: 6px;
+  background-color: #16a085;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.buscador {
+  margin-bottom: 14px;
+}
+
+.buscador input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 #listaContactos {
   list-style: none;
   padding: 0;
@@ -123,6 +144,7 @@ button.eliminar:hover {
   align-items: center;
   justify-content: space-between;
   gap: 14px;
+  flex-wrap: wrap;
   padding: 12px 14px;
   margin-bottom: 10px;
   background-color: #f7fafc;

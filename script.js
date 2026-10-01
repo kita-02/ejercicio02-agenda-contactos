@@ -33,11 +33,44 @@ function guardarContacto() {
   mensaje.innerText = "Contacto registrado correctamente.";
 
   limpiarFormulario();
+  mostrarContactos();
 }
 
 function mostrarError(elemento, texto) {
   elemento.className = "error";
   elemento.innerText = texto;
+}
+
+function mostrarContactos() {
+  let lista = document.getElementById("listaContactos");
+  let filtro = document.getElementById("buscar").value.trim().toLowerCase();
+  lista.innerHTML = "";
+
+  let visibles = contactos.filter(function (contacto) {
+    return filtro === "" || contacto.nombre.toLowerCase().includes(filtro);
+  });
+
+  visibles.forEach(function (contacto) {
+    let item = document.createElement("li");
+
+    let datos = document.createElement("div");
+    datos.className = "datos";
+    datos.innerHTML =
+      "<strong>" + contacto.nombre + "</strong>" +
+      "<span>" + contacto.telefono + "</span>" +
+      "<span>" + contacto.correo + "</span>";
+
+    item.appendChild(datos);
+    lista.appendChild(item);
+  });
+
+  document.getElementById("total").innerText = contactos.length;
+  document.getElementById("vacio").style.display = visibles.length ? "none" : "block";
+  if (visibles.length === 0 && contactos.length > 0) {
+    document.getElementById("vacio").innerText = "No se encontraron contactos con ese nombre.";
+  } else {
+    document.getElementById("vacio").innerText = "No hay contactos registrados.";
+  }
 }
 
 function limpiarFormulario() {
@@ -46,3 +79,6 @@ function limpiarFormulario() {
   document.getElementById("correo").value = "";
   document.getElementById("nombre").focus();
 }
+
+document.getElementById("buscar").addEventListener("input", mostrarContactos);
+mostrarContactos();
