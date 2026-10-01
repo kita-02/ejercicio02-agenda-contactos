@@ -111,6 +111,7 @@ function verContacto(indice) {
   let detalle = document.getElementById("detalle");
 
   detalle.innerHTML =
+    '<button type="button" class="cerrar" onclick="cerrarDetalle()">Cerrar</button>' +
     "<h3>Detalle del contacto</h3>" +
     "<dl>" +
     "<dt>Nombre</dt><dd>" + contacto.nombre + "</dd>" +
